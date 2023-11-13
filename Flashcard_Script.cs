@@ -255,6 +255,7 @@ public class FlashcardScript : MonoBehaviour
     public GameObject ArmsDownHappy;
     public GameObject ArmsUpHappy;
     public GameObject ArmsDownSad;
+    public GameObject HelperModeSprite;
 
     //for getting all questions right in the end
     private bool celebration;
@@ -283,12 +284,6 @@ public class FlashcardScript : MonoBehaviour
 
         if (assistantMode && answerInput)
         {
-            Vector3 returnPlace = new(-250, 72, 0);
-            ArmsUpHappy.transform.position = returnPlace;
-            assistantMode = false;
-        }
-        else if (assistantMode)
-        {
             assistantMode = false;
         }
 
@@ -307,28 +302,7 @@ public class FlashcardScript : MonoBehaviour
         ArmsDownHappy.SetActive(true);
         ArmsUpHappy.SetActive(true);
         ArmsDownSad.SetActive(false);
-
-        leftHelpers.Add(leftHelper0);
-        leftHelpers.Add(leftHelper1);
-        leftHelpers.Add(leftHelper2);
-        leftHelpers.Add(leftHelper3);
-        leftHelpers.Add(leftHelper4);
-        leftHelpers.Add(leftHelper5);
-        leftHelpers.Add(leftHelper6);
-        leftHelpers.Add(leftHelper7);
-        leftHelpers.Add(leftHelper8);
-        leftHelpers.Add(leftHelper9);
-
-        rightHelpers.Add(rightHelper0);
-        rightHelpers.Add(rightHelper1);
-        rightHelpers.Add(rightHelper2);
-        rightHelpers.Add(rightHelper3);
-        rightHelpers.Add(rightHelper4);
-        rightHelpers.Add(rightHelper5);
-        rightHelpers.Add(rightHelper6);
-        rightHelpers.Add(rightHelper7);
-        rightHelpers.Add(rightHelper8);
-        rightHelpers.Add(rightHelper9);
+        HelperModeSprite.SetActive(false);
 
         for (int i = 0; i < 10; i++)
         {
@@ -457,10 +431,7 @@ public class FlashcardScript : MonoBehaviour
 
         if (input2 <= 9)
         {
-            ArmsUpHappy.SetActive(true);
-
-            Vector3 moveCenter = new Vector3(250, -175, 0);
-            ArmsUpHappy.transform.Translate(moveCenter);
+            HelperModeSprite.SetActive(true);
 
             switch (random)
             {
@@ -511,10 +482,8 @@ public class FlashcardScript : MonoBehaviour
             rightHelpers[i].SetActive(false);
         }
 
-        Vector3 moveBack = new Vector3(-250, 175, 0);
-        ArmsUpHappy.transform.Translate(moveBack);
-
         ArmsDownSad.SetActive(true);
+        HelperModeSprite.SetActive(false);
 
         switch (random)
         {
@@ -552,14 +521,12 @@ public class FlashcardScript : MonoBehaviour
             return;
         }
 
+        HelperModeSprite.SetActive(false);
         answerInput.SetActive(false);
         checkAnswerButton.SetActive(false);
         noAnswerText.SetActive(false);
         skipQuestionButton.SetActive(false);
         isFlipping = true;
-
-        Vector3 moveBack = new Vector3(-250, 175, 0);
-        ArmsUpHappy.transform.Translate(moveBack);
 
         for (int i = 0; i < 10; i++)
         {
@@ -652,10 +619,7 @@ public class FlashcardScript : MonoBehaviour
 
             if (assistantMode)
             {
-                ArmsUpHappy.SetActive(true);
-
-                Vector3 moveCenter = new Vector3(250, -175, 0);
-                ArmsUpHappy.transform.Translate(moveCenter);
+                HelperModeSprite.SetActive(true);
 
                 switch (random)
                 {
@@ -715,6 +679,7 @@ public class FlashcardScript : MonoBehaviour
         ArmsDownHappy.SetActive(true);
         ArmsUpHappy.SetActive(true);
         ArmsDownSad.SetActive(false);
+        HelperModeSprite.SetActive(false);
 
         leftHelpers.Add(leftHelper0);
         leftHelpers.Add(leftHelper1);
@@ -803,3 +768,6 @@ public class FlashcardScript : MonoBehaviour
     }
     
 }
+
+
+
