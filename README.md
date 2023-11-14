@@ -16,4 +16,4 @@ After answering all questions correctly a certain number of times, which depends
 
 On the question and answer pages, there is a restart button that takes the user back to the starting screen. 
 
-Here is a video of the app functioning. 
+[Here](https://drive.google.com/file/d/1gF2Z3qYkVQP1lGjJFTVNE4-ZKKI74ORV/view?usp=sharing) is a video of the app functioning, as well as a code explanation. 
